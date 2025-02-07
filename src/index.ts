@@ -15,8 +15,8 @@ import {
 	system,
 	toast,
 	ui,
-	WorkerExtension
-} from "@kksh/api/ui/worker"
+	TemplateUiCommand
+} from "@kksh/api/ui/template"
 import { markdownInstruction } from "./instruction"
 
 async function disableAppleQuarantine(path: string) {
@@ -40,7 +40,7 @@ async function disableMultipleAppleQuarantine(paths: string[]) {
 	}
 }
 
-class ExtensionTemplate extends WorkerExtension {
+class ExtensionTemplate extends TemplateUiCommand {
 	async load() {
 		event.onDragDrop(async (files) => {
 			console.log("Dropped Files: ", files)
